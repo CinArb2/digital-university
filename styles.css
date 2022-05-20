@@ -105,7 +105,7 @@ h1, h2, h3, h4{
 }
 
 h2{
-  font-size: 40px;
+  font-size: clamp(2rem, 5vw, 40px);
 }
 
 /******************************* Header Section ********************************/
@@ -151,6 +151,7 @@ header{
   position: relative;
   padding-top: 155px;
   background-image: url('./assets/slider3.jpg');
+  background-position: center;
   background-color: rgba(61, 61, 61, 0.5);
   background-blend-mode: saturation;
   background-size: cover;
@@ -775,4 +776,39 @@ footer{
 .footer__contact{
   padding-block: 50px;
   margin-left: 8.333%;
+}
+
+@media screen and (max-width: 1135px){
+
+  .gallery__list-images{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: unset;
+  }
+
+  [class*=img-]{
+    margin: 0 auto;
+    height: 250px;
+    width: 250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    grid-area: unset;
+  }
+
+  [class*=img-]:hover{
+    background-size: cover;
+  }
+
+  .footer__content{
+    display: block;
+    text-align: center;
+  }
+
+  .footer__icons-social{
+    margin: 0 auto;
+  }
+
+  .footer__contact{
+    margin-left: 0;
+  }
 }
