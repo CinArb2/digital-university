@@ -5,7 +5,7 @@
 :root{
   --font-body: 'Roboto', sans-serif;
   --font-heading: 'Oswald', sans-serif;
-  --dark: #3d3d3dc4;
+  --dark: #3d3d3d;
   --teal: #12b975;
   --teal-hover: #50d39ebd;
   --shadow: #e1e1e1;
@@ -49,7 +49,6 @@ html:focus-within {
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
   font-size: 15px;
   font-family: var(--font-body);
   font-weight: lighter;
@@ -63,7 +62,7 @@ a {
   text-decoration: none;
   color: inherit;
   font-family: var(--font-heading);
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
 }
 
@@ -101,17 +100,20 @@ select {
 h1, h2, h3, h4{
   font-family: var(--font-heading);
   line-height: 1.2;
-  font-size: 42px;
-  margin-bottom: 50px;
   text-transform: uppercase;
   font-weight: 400;
+}
+
+h2{
+  font-size: 40px;
 }
 
 /******************************* Header Section ********************************/
 
 .container{
-  max-width: 1250px;
+  max-width: 1140px;
   margin: 0 auto;
+  padding-inline: 15px;
 }
 
 .d-flex{
@@ -130,8 +132,9 @@ header{
 .main-nav__list{
   display: flex;
   justify-content: space-between;
-  gap: 3rem;
+  gap: 2.4rem;
   padding-left: 0;
+  padding-right: 1rem;
 }
 
 .main-nav__item{
@@ -139,14 +142,14 @@ header{
 }
 
 .logo-image{
-  width: 85%;
+  width: 80%;
 }
 
 /******************************* Hero Section ********************************/
 
 .hero{
   position: relative;
-  padding-top: 150px;
+  padding-top: 155px;
   background-image: url('./assets/slider3.jpg');
   background-color: rgba(61, 61, 61, 0.5);
   background-blend-mode: saturation;
@@ -157,39 +160,42 @@ header{
 .center{
   display: grid;
   place-content: center;
-  min-height: calc(100vh - 150px);
+  min-height: calc(100vh - 140px);
 }
 
 .hero__content{
   width: 50%;
   margin: 0 auto;
   text-align: center;
+  margin-bottom: 75px;
 }
 
 .hero__heading{
-  font-size: 58px;
+  font-size: 52px;
   font-weight: 700;
   text-transform: uppercase;
-  width: 80%;
+  width: 95%;
   margin: 0 auto 50px;
 }
 
 .hero__form{
   background-color: white;
-  margin-top: 70px;
   display: flex;
-  justify-content: space-evenly;
+  align-items: center;
   padding: 15px;
-  border: 1px solid black;
   border-radius: 50rem;
 }
 
-.hero__form > *{
-  width: 25%;
-} 
-
 .hero__input{
   border: none;
+}
+
+.hero__input-group{
+  width: 25%;
+}
+
+.icon-input{
+  color: rgb(126, 121, 121);
 }
 
 .button{
@@ -200,6 +206,13 @@ header{
   background-color: transparent;
   font-weight: 500;
   letter-spacing: 0.1em;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.button:hover {
+  border: solid 1px #3d3d3d;
+  color: #FFFFFF;
+  background-color: #3d3d3d;
 }
 
 .button--hero{
@@ -212,24 +225,24 @@ header{
   background-color: var(--teal);
 }
 
-.hero__social{
+.hero__social-icons{
   position: absolute;
-  right: 5%;
-  top: 50%;
+  right: 5.6%;
+  top: 49%;
   color: white;
-  transform: translateY(-50px);
+  transform: translateY(-50%);
 }
 
-.fa-brands{
+.icon__hero{
   display: block;
   padding-block: 1rem;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 /******************************* About Section ********************************/
 
 .about{
-  padding-block: 130px;
+  padding-block: 120px;
   text-align: center;
 }
 
@@ -239,30 +252,38 @@ header{
 }
 
 .about__heading{
-  font-size: 48px;
   margin-bottom: 50px;
   text-transform: uppercase;
-  font-weight: 300;
 }
 
 .about__text{
   margin-bottom: 40px;
+  font-size: 15px;
 }
 
 .about__features{
   padding-top: 70px;
-  overflow: hidden;
   padding-bottom: 10px;
   display: flex;
 }
 
 .about__feature-item{
   max-width: 33%;
-  padding: 30px 15px;
+  padding: 15px;
+  border-radius: 10px;
+  transition: all 200ms ease-in-out;
+}
+
+.about__feature-item:hover{
+  box-shadow: 1px 1px 15px #e1e1e1;
+}
+
+.about__feature-item:hover .about__feature-image{
+  animation: .8s rotateIn;
 }
 
 .about__feature-image{
-  margin: 35px auto;
+  margin: 0 auto 30px;
   transform: scale(1.1);
 }
 
@@ -272,6 +293,14 @@ header{
   margin-bottom: 20px;
 }
 
+@keyframes rotateIn{
+  0%{
+    transform: rotate(-200deg);
+  }
+  100%{
+    transform: rotate(0);
+  }
+}
 /******************************* Skills Section ********************************/
 
 .skills{
@@ -281,25 +310,35 @@ header{
 
 .skills__image{
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .skills__content{
-  padding-left: 8.333%;
+  padding-left: 7%;
   padding-right: 17%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.skills__content .button{
+  align-self: flex-start;
 }
 
 .skills__heading{
-  width: 76%;
-  padding-top: 1.7rem;
+  padding-top: 1.8rem;
+  padding-bottom: 50px;
 }
 
 .skills__stats{
-  padding-block: 40px;
+  padding-top: 30px;
+  padding-bottom: 20px;
 }
 
 
 .skills__stats-tag{
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .skills__stats-bar{
@@ -358,9 +397,10 @@ header{
 
 .gallery__description{
   display: grid;
+  align-items: center;
   grid-template-columns: 1fr 1fr;
   margin-bottom: 60px;
-  padding-block: 1rem;
+  padding-bottom: 80px;
 }
 
 .gallery__text{
@@ -372,16 +412,13 @@ header{
 }
 
 .gallery__heading{
-  padding-top: 3rem;
   width: 60%;
-  font-size: 57px;
-  font-weight: 400;
 }
 
 .gallery__list-images{
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(4, 310px);
+  grid-template-rows: repeat(4, 277px);
 }
 
 .img-1{
@@ -396,23 +433,6 @@ header{
 
 .img-1:hover{
   background-size: 125%;
-}
-.img-1::after{
-  content: 'see our amazing work +';
-  width: 100%;
-  height: 100%;
-  background-color: var(--teal-hover);
-  transition: opacity 400ms ease-in-out;
-  position: absolute;
-  display: grid;
-  place-content: center;
-  color: white;
-  opacity: 0;
-}
-
-.img-1:hover::after{
-  opacity: 1;
-  background-blend-mode: soft-light;
 }
 
 
@@ -504,17 +524,16 @@ header{
 /******************************* Quote Section ********************************/
 
 .quote{
-  padding-block: 133px;
+  padding-block: 120px;
   font-family: var(--font-heading);
   text-align: center;
-  font-size: 31px;
+  font-size: 28px;
   font-weight: 400;
   line-height: 1.4;
-  
 }
 
 .quote__text{
-  width: 48%;
+  width: 40%;
   margin: 0 auto;
   position: relative;
 }
@@ -539,7 +558,7 @@ header{
   display: block;
   margin-top: 27px;
   font-family: var(--font-body);
-  font-size: 23px;
+  font-size: 20px;
 }
 
 /******************************* Cta Section ********************************/
@@ -552,6 +571,8 @@ header{
 
 .cta__image{
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .cta__content{
@@ -559,14 +580,13 @@ header{
   align-content: center;
   justify-items: start;
   color: white;
-  max-width: 625px;
-  margin-left: auto;
-  padding-right: 2rem;
+  padding-inline: 3rem;
 }
 
 .cta__heading{
   width: 76%;
   padding-top: 1.7rem;
+  margin-bottom: 50px;
 }
 
 .button-dark{
@@ -583,18 +603,18 @@ header{
 
 .pricing{
   text-align: center;
-  padding-top: 100px;
+  padding-block: 100px;
 }
 
 .pricing__description{
-  max-width: 66%;
+  max-width: 69%;
   margin: 0 auto 50px;
   padding-inline: 27px;
 }
 
 .pricing__title{
   font-size: 40px;
-  max-width: 57%;
+  max-width: 60%;
   margin: 0 auto 50px;
 }
 
@@ -604,7 +624,7 @@ header{
 }
 
 .pricing__card{
-  padding: 60px 19px 100px;
+  padding: 60px 18.5px 100px;
   font-size: 14px;
 }
 
@@ -614,7 +634,7 @@ header{
 }
 
 .pricing__card-content{
-  width: 85%;
+  /* width: 85%; */
   margin: 0 auto;
 }
 
@@ -657,4 +677,102 @@ header{
 .pricing__card.standard .pricing__price
 {
   color: var(--teal);
+}
+
+/******************************* Review Section ********************************/
+
+.review{
+  padding-top: 2rem;
+  padding-bottom: 5.5rem;
+  text-align: center;
+  background-image: url('./assets/clients-banner.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.review__overlay{
+  position: absolute;
+  top: 0;
+  height: 50%;
+  width: 100%;
+  background-color: var(--teal);
+  opacity: 0.9;
+}
+
+.review__icon{
+  font-size: 20px;
+  color: white;
+}
+
+.review__content{
+  max-width: 51%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.review__description{
+  padding-top: 30px;
+  padding-bottom: 49px;
+  color: white;
+}
+
+.review__image{
+  width: 160px;
+  margin: 0 auto;
+}
+
+.review__author{
+  font-family: var(--font-heading);
+  color: var(--teal);
+  font-size: 20px;
+  display: block;
+  margin: 30px 0 8px;
+  font-weight: 400;
+}
+
+.review__social-icons{
+  margin-top: 1rem;
+  font-size: 16px;
+}
+
+.review__social-icons > i + i{
+  margin-left: 2rem;
+}
+
+/******************************* Footer Section ********************************/
+
+footer{
+  padding-block: 120px;
+}
+
+.footer__heading,
+.footer__address,
+.footer__mobile,
+.footer__inquiries
+{
+  margin-bottom: 20px;
+}
+
+.footer__schedule{
+  margin-bottom: 25px;
+}
+
+.footer__icons-social{
+  max-width: 239px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__content{
+  padding-inline: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.footer__contact{
+  padding-block: 50px;
+  margin-left: 8.333%;
 }

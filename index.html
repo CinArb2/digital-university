@@ -46,16 +46,25 @@
         Lorem Ipsum has been the industry’s standard dummy.</p>
       </div>
       <form class="hero__form">
-        <input type="text" class="hero__input" placeholder="Full Name">
-        <input type="email" class="hero__input" placeholder="Email Adress *">
-        <input type="number" class="hero__input" placeholder="Phone No">
+        <div class="hero__input-group">
+          <i class="fa-solid fa-user icon-input"></i>
+          <input type="text" class="hero__input" placeholder="Full Name">
+        </div>
+        <div class="hero__input-group">
+          <i class="fa-solid fa-envelope icon-input"></i>
+          <input type="email" class="hero__input" placeholder="Email Adress *">
+        </div>
+        <div class="hero__input-group">
+          <i class="fa-solid fa-align-center icon-input"></i>
+          <input type="number" class="hero__input" placeholder="Phone No">
+        </div>
         <button class="button button--green button--hero">Get registered now</button>
       </form>
-      <div class="hero__social">
-        <i class="fa-brands fa-facebook-f"></i>
-        <i class="fa-brands fa-twitter"></i>
-        <i class="fa-brands fa-linkedin"></i>
-        <i class="fa-brands fa-instagram"></i>
+      <div class="hero__social-icons">
+        <i class="fa-brands fa-facebook-f icon__hero"></i>
+        <i class="fa-brands fa-twitter icon__hero"></i>
+        <i class="fa-brands fa-linkedin icon__hero"></i>
+        <i class="fa-brands fa-instagram icon__hero"></i>
       </div>
     </div>
   </section>
@@ -227,13 +236,15 @@
   </section>
   <section class="review">
     <div class="review__overlay"></div>
-    <div class="container">
-      <i class="fa-solid fa-quote-left"></i>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo nostrum necessitatibus rerum dolor dolorem fugiat libero nobis at repudiandae corrupti.</p>
-      <img src="./assets/client1.png" alt="">
-      <span>Elizabeth Taylor</span>
+    <div class="container review__content">
+      <i class="fa-solid fa-quote-left review__icon"></i>
+      <p class="review__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere nisi est, sed ullamcorper nibh volutpat at. In
+      rutrum, metus ut posuere gravida, tellus lacus faucibus lectus, sed cursus eros ligula non odio. Suspendisse volutpat
+      sagittis sapien. Curabitur quis malesuada ipsum.</p>
+      <img src="./assets/client1.png" alt="" class="review__image">
+      <span class="review__author">Elizabeth Taylor</span>
       <p>Amazon</p>
-      <div class="hero__social">
+      <div class="review__social-icons">
         <i class="fa-brands fa-facebook-f"></i>
         <i class="fa-brands fa-twitter"></i>
         <i class="fa-brands fa-linkedin"></i>
@@ -241,24 +252,28 @@
     </div>
   </section>
   <footer>
-    <div class="container">
-      <div>
-        <h2>Digital university</h2>
-        <p>123 Stree New York City , United States Of America.</p>
+    <div class="container footer__content">
+      <div class="footer__contact">
+        <h2 class="footer__heading">Digital university</h2>
+        <p class="footer__address">123 Stree New York City , United States Of America.</p>
         <p>Office Telephone : 001 01085379709</p>
-        <p>Mobile : 001 63165370895</p>
+        <p  class="footer__mobile">Mobile : 001 63165370895</p>
         <p>Email : admin@website.com</p>
-        <p>Inquiries : email@website.com</p>
-        <p>Mon-Fri: 9am to 6pm</p>
-        <div class="hero__social">
+        <p class="footer__inquiries">Inquiries : email@website.com</p>
+        <p class="footer__schedule">Mon-Fri: 9am to 6pm</p>
+        <div class="footer__icons-social">
           <i class="fa-brands fa-facebook-f"></i>
           <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-google-plus-g"></i>
           <i class="fa-brands fa-linkedin"></i>
           <i class="fa-brands fa-instagram"></i>
         </div>
       </div>
       <div>
-        map
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6048.47617286297!2d-74.005973!3d40.712775!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7f1e88758d210007!2sNew%20York%20City%20Hall!5e0!3m2!1sen!2sus!4v1653051022038!5m2!1sen!2sus"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </footer>
