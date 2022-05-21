@@ -139,10 +139,17 @@ header{
 
 .main-nav__item{
   list-style: none;
+  transition: all 300ms ease-in-out;
+}
+
+.main-nav__item:hover{
+  transform: scale(1.1);
+  font-weight: 500;
 }
 
 .logo-image{
-  width: 80%;
+  width: 90.39px;
+  height: 55.9px;
 }
 
 /******************************* Hero Section ********************************/
@@ -208,6 +215,7 @@ header{
   font-weight: 500;
   letter-spacing: 0.1em;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  cursor: pointer;
 }
 
 .button:hover {
@@ -234,10 +242,24 @@ header{
   transform: translateY(-50%);
 }
 
+.hero__social-icons > *{
+  cursor: pointer;
+}
+
 .icon__hero{
   display: block;
   padding-block: 1rem;
   font-size: 17px;
+}
+
+[class*=fa-]{
+  cursor: pointer;
+}
+
+[class*=fa-]:hover{
+  transform: scale(1.2);
+  font-weight: 500;
+  
 }
 
 /******************************* About Section ********************************/
@@ -273,6 +295,7 @@ header{
   padding: 15px;
   border-radius: 10px;
   transition: all 200ms ease-in-out;
+  cursor: pointer;
 }
 
 .about__feature-item:hover{
@@ -422,105 +445,56 @@ header{
   grid-template-rows: repeat(4, 277px);
 }
 
-.img-1{
-  background-image: url('./assets/1.jpg');
+[class*=img-]{
   background-position: center;
   background-size: 100%;
-  grid-area: 1 / 1 / span 2 / span 2;
   transition: background-size 400ms ease-in-out;
-  position: relative;
-  cursor: pointer;
 }
 
-.img-1:hover{
+[class*=img-]:hover{
   background-size: 125%;
 }
 
+.img-1{
+  background-image: url('./assets/1.jpg');
+  grid-area: 1 / 1 / span 2 / span 2;
+}
 
 .img-2{
   background-image: url('./assets/2.jpg');
-  background-position: center;
-  background-size: 100%;
   grid-area: 1 / 3 / span 1 / span 2;
-  transition: background-size 300ms ease-in-out;
-}
-
-.img-2:hover{
-  background-size: 125%;
 }
 
 .img-3{
   background-image: url('./assets/3.jpg');
-  background-position: center;
-  background-size: 100%;
   grid-area: 1 / 5 / span 2 / span 4;
-  transition: background-size 300ms ease-in-out;
-}
-
-.img-3:hover{
-  background-size: 125%;
 }
 
 .img-4{
   background-image: url('./assets/4.jpg');
-  background-position: center;
-  background-size: 100%;
   grid-area: 2 / 3 / span 1 / span 2;
-  transition: background-size 300ms ease-in-out;
-}
-
-.img-4:hover{
-  background-size: 125%;
 }
 
 .img-5{
   background-image: url('./assets/5.jpg');
-  background-position: center;
-  background-size: 100%;
   grid-area: 3 / 1 / span 2 / span 4;
-  transition: background-size 300ms ease-in-out;
 }
-
-.img-5:hover{
-  background-size: 125%;
-}
-
 
 .img-6{
   background-image: url('./assets/6.jpg');
-  background-position: center;
-  background-size: 100%;
   grid-area: 3 / 5 / span 1 / span 4;
-  transition: background-size 300ms ease-in-out;
-}
-
-.img-6:hover{
-  background-size: 125%;
 }
 
 .img-7{
   background-image: url('./assets/7.jpg');
-  background-position: center;
-  background-size: 100%;
   grid-area: 4 / 5 / span 1 / span 2;
-  transition: background-size 300ms ease-in-out;
-}
-
-.img-7:hover{
-  background-size: 125%;
 }
 
 .img-8{
   background-image: url('./assets/8.jpg');
-  background-position: center;
-  background-size: 100%;
   grid-area: 4 / 7 / span 1 / span 2;
-  transition: background-size 300ms ease-in-out;
 }
 
-.img-8:hover{
-  background-size: 125%;
-}
 
 /******************************* Quote Section ********************************/
 
@@ -581,7 +555,7 @@ header{
   align-content: center;
   justify-items: start;
   color: white;
-  padding-inline: 3rem;
+  padding: 3rem;
 }
 
 .cta__heading{
@@ -598,6 +572,10 @@ header{
 .cta__content p:last-of-type{
   margin-top: 1rem;
   margin-bottom: 50px;
+}
+
+.button-dark:hover{
+  background-color: var(--teal);
 }
 
 /******************************* Pricing Section ********************************/
@@ -627,6 +605,7 @@ header{
 .pricing__card{
   padding: 60px 18.5px 100px;
   font-size: 14px;
+  transition: all 300ms ease-in-out;
 }
 
 .pricing__heading{
@@ -679,6 +658,17 @@ header{
 {
   color: var(--teal);
 }
+
+.pricing__container:hover .pricing__card{
+  border-radius: 0;
+  box-shadow: 1px 1px 15px white;
+}
+
+.pricing__container:hover .pricing__card:hover{
+  border-radius: 10px;
+  box-shadow: 1px 1px 15px #e1e1e1;
+}
+
 
 /******************************* Review Section ********************************/
 
@@ -778,17 +768,42 @@ footer{
   margin-left: 8.333%;
 }
 
+.footer__map{
+  width: 100%;
+  height: 100%;
+}
+
 @media screen and (max-width: 1135px){
 
+  .hero__form{
+    width: 90%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 40px;
+  }
+
+  .button--hero{
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .gallery__heading{
+    margin-left: 8.33%;
+    width: 68%;
+  }
+
   .gallery__list-images{
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: unset;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
   }
 
   [class*=img-]{
     margin: 0 auto;
-    height: 250px;
-    width: 250px;
+    height: 400px;
+    width: 90%;
+    max-width: 400px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -797,6 +812,17 @@ footer{
 
   [class*=img-]:hover{
     background-size: cover;
+  }
+
+  .pricing__container{
+    display: block;
+    min-width: 300px;
+    max-width: 60%;
+    margin: 0 auto;
+  }
+
+  .pricing__title{
+    max-width: unset;
   }
 
   .footer__content{
@@ -810,5 +836,113 @@ footer{
 
   .footer__contact{
     margin-left: 0;
+  }
+
+  .footer__map{
+    width: 80%;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 650px){
+  .d-flex{
+    display: block;
+  }
+
+  .hero__content{
+    width: 78%;
+  }
+  .hero__heading{
+    font-size: 2.5rem;
+  }
+
+  .main-nav__list{
+    display: none;
+  }
+
+  .logo-image{
+    margin: 0 auto;
+  }
+
+  .hero__form{
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .hero__input-group{
+    width: 80%;
+    margin: 1rem auto;
+    text-align: center;
+  }
+
+  .about__features{
+    display: block;
+  }
+
+  .about__feature-item{
+    max-width: 80%;
+    margin: 0.5rem auto;
+  }
+
+  .skills{
+    display: block;
+  }
+
+  .skills__content{
+    display: block;
+    padding-inline: 2rem;
+    text-align: center;
+  }
+
+  .gallery__description{
+    display: block;
+    text-align: center;
+  }
+
+  .gallery__heading{
+    width: 90%;
+    margin: 0 auto 2rem;
+  }
+
+  .gallery__text{
+    padding-left: 0;
+  }
+
+  .quote__text{
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .quote__icon-left{
+    left: 18px;
+  }
+
+  .cta{
+    display: block;
+    text-align: center;
+  }
+
+  .cta__heading{
+    width: 90%;
+    margin: 0 auto 2rem;
+  }
+
+  .cta__content{
+    display: block;
+  }
+  .pricing__description{
+    max-width: unset;
+  }
+
+  .pricing__container{
+    max-width: 90%;
+  }
+
+  .pricing__title{
+    width: 90%;
+  }
+
+  .review__content{
+    max-width: unset;
   }
 }
